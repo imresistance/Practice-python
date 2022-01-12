@@ -10,14 +10,16 @@ def bus(data):
     loop = 0
     for index in range (len(data)):
         for i in range (loop, len(data)):
+
+            # first number / one number
             if len(merge) == 0:
                 merge.append(data[i])
                 if len(data) == 1:
                     ans.append(data[i])
                     break
+
+            # other number
             elif len(merge) > 0:
-
-
                 if data[i-1]+1 == data[i]:
                     merge.append(data[i])
                 else:
@@ -30,6 +32,7 @@ def bus(data):
                     loop += len(merge)
                     merge.clear()
                     break
+                    
     stra = ' '.join(map(str, ans))
     print(stra)
 
